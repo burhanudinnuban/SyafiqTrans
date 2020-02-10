@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">SyafiqTrans</string>
+    <string name="title_home">Beranda</string>
+    <string name="title_dashboard">Riwayat</string>
+    <string name="title_notifications">Pengaturan</string>
+    <string-array name="Quantity">
+        <item>Pilih Jumlah Bus</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+    </string-array>
+    <string-array name="Menginap">
+        <item>Pilih Lama Menginap</item>
+        <item>Tidak Menginap</item>
+        <item>1 hari</item>
+        <item>2 hari</item>
+        <item>3 hari</item>
+        <item>4 hari</item>
+        <item>5 hari</item>
+        <item>6 hari</item>
+        <item>7 hari</item>
+        <item>8 hari</item>
+        <item>9 hari</item>
+        <item>10 hari</item>
+    </string-array>
+    <string-array name="Bus">
+        <item>Pilih Tipe Bus</item>
+        <item>Big Bus</item>
+        <item>Medium Bus</item>
+        <item>Hiace</item>
+    </string-array>
+    <string name="title_activity_maps">Map</string>
+    <string name="title_activity_rvriwayat">RVRiwayat</string>
+</resources>

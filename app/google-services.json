@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1065170406777",
+    "firebase_url": "https://syafiqtransfirebase.firebaseio.com",
+    "project_id": "syafiqtransfirebase",
+    "storage_bucket": "syafiqtransfirebase.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1065170406777:android:41834218afa463873633a8",
+        "android_client_info": {
+          "package_name": "com.SQTrans"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1065170406777-cnevkr76gp99pdfr1srvqlie6p8c7v6a.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.SQTrans",
+            "certificate_hash": "48acfab3e677bd0699139e51a4040c3f50b4e60f"
+          }
+        },
+        {
+          "client_id": "1065170406777-guimdu1v610rv6o3jcdnkgmg9cqfrg2a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDWQm7f3CIAou6X4sog3yLNN4I-E2QdCSc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1065170406777-guimdu1v610rv6o3jcdnkgmg9cqfrg2a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
