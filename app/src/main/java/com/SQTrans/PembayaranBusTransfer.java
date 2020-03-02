@@ -141,7 +141,4 @@ public class PembayaranBusTransfer extends AppCompatActivity {
         });
     }
 
-    public static PembayaranBusTransfer getInstance(){
-        return intansce;
-    }
 }

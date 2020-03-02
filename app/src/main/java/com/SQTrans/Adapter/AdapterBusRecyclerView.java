@@ -1,6 +1,6 @@
 package com.SQTrans.Adapter;
 
-import android.app.Activity;
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -12,14 +12,13 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.SQTrans.ModelData.PemesananBus;
 import com.SQTrans.PembayaranBusTransfer;
-import com.SQTrans.ProsesPesan;
 import com.SQTrans.R;
 import com.SQTrans.RVRiwayat;
-import com.SQTrans.Services.MainActivity;
 
 import java.util.ArrayList;
 
@@ -27,12 +26,10 @@ public class AdapterBusRecyclerView extends RecyclerView.Adapter<AdapterBusRecyc
     private ArrayList<PemesananBus> daftarBarang;
     private Context context;
     private FirebaseDataListener listener;
+    @SuppressLint("StaticFieldLeak")
     private static AdapterBusRecyclerView instance;
 
     public AdapterBusRecyclerView(ArrayList<PemesananBus> barangs, Context ctx) {
-        /**
-         * Inisiasi data dan variabel yang akan digunakan
-         */
         daftarBarang = barangs;
         context = ctx;
         listener = (RVRiwayat) ctx;
@@ -46,13 +43,17 @@ public class AdapterBusRecyclerView extends RecyclerView.Adapter<AdapterBusRecyc
          * Di tutorial ini kita hanya menggunakan data String untuk tiap item
          * dan juga view nya hanyalah satu TextView
          */
-        TextView tvTitle, tvTanggal, tvDari, tvTujuan, tvQuantity, tvPenginapan;
+        TextView tvTitle;
+        TextView tvTanggal;
+        TextView tvDari;
+        TextView tvTujuan;
+        TextView tvPenginapan;
         ImageButton ib_delete;
         Button ib_edit;
 
         ViewHolder(View v) {
             super( v );
-            tvTitle = (TextView) v.findViewById( R.id.tvItemBus );
+            tvTitle = v.findViewById( R.id.tvItemBus );
             ib_delete = v.findViewById( R.id.ib_delete );
             ib_edit = v.findViewById( R.id.ib_edit );
             tvDari = v.findViewById( R.id.tvDari );
@@ -62,22 +63,16 @@ public class AdapterBusRecyclerView extends RecyclerView.Adapter<AdapterBusRecyc
         }
     }
 
+    @NonNull
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        /**
-         *  Inisiasi ViewHolder
-         */
         View v = LayoutInflater.from( parent.getContext() ).inflate( R.layout.item_bus, parent, false );
-        // mengeset ukuran view, margin, padding, dan parameter layout lainnya
-        ViewHolder vh = new ViewHolder( v );
-        return vh;
+        return new ViewHolder( v );
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
     public void onBindViewHolder(ViewHolder holder, final int position) {
-        /**
-         *  Menampilkan data pada view
-         */
         final String bigbus = daftarBarang.get( position ).getBigBus();
         final String mediumbus = daftarBarang.get( position ).getMediumBus();
         final String minibus = daftarBarang.get( position ).getminiBus();
@@ -133,9 +128,6 @@ public class AdapterBusRecyclerView extends RecyclerView.Adapter<AdapterBusRecyc
 
     @Override
     public int getItemCount() {
-        /**
-         * Mengembalikan jumlah item pada barang
-         */
         return daftarBarang.size();
     }
 

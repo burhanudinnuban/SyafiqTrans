@@ -4,19 +4,13 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.ImageButton;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.SQTrans.ModelData.PembayaranBus;
-import com.SQTrans.ModelData.PemesananBus;
 import com.SQTrans.R;
-import com.google.firebase.database.DatabaseReference;
 
 import java.util.ArrayList;
 
@@ -32,11 +26,7 @@ public class AdapterPembayaranBus extends RecyclerView.Adapter<AdapterPembayaran
     @NonNull
     @Override
     public AdapterPembayaranBus.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        /**
-         *  Inisiasi ViewHolder
-         */
         View v = LayoutInflater.from( parent.getContext() ).inflate( R.layout.history_transfer, parent, false );
-        // mengeset ukuran view, margin, padding, dan parameter layout lainnya
         return new ViewHolder( v );
     }
 
@@ -46,12 +36,7 @@ public class AdapterPembayaranBus extends RecyclerView.Adapter<AdapterPembayaran
         final String dari = transferBus.get( position ).getDari();
         final String tujuan = transferBus.get( position ).getDestinasi();
         final String tanggal = transferBus.get( position ).getPergi();
-        final String bigbus = transferBus.get( position ).getBigBus();
-        final String mediumbus = transferBus.get( position ).getMediumBus();
-        final String minibus = transferBus.get( position ).getminiBus();
-        final String hiace = transferBus.get( position ).getHiAce();
         final String status = transferBus.get( position ).getStatus();
-        final String penginapan = transferBus.get( position ).getStrPenginapan();
 
         holder.tvTanggalTf.setText( tanggal );
         holder.tvStatus.setText( status );
@@ -72,9 +57,16 @@ public class AdapterPembayaranBus extends RecyclerView.Adapter<AdapterPembayaran
         return transferBus.size();
     }
 
+    public Context getContext() {
+        return context;
+    }
+
+    public void setContext(Context context) {
+        this.context = context;
+    }
+
     class ViewHolder extends RecyclerView.ViewHolder {
         TextView tvTanggalTf, tvDari, tvTujuan, tvJumlahtf, tvStatus, tvDetail;
-        LinearLayout llDetail;
 
         ViewHolder(View itemView) {
             super( itemView );
