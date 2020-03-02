@@ -13,7 +13,7 @@
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="com.SQTrans.ui.history.MessageFragment"
+        android:name="com.SQTrans.ui.history.HistoriFragment"
         android:label="@string/title_dashboard"
         tools:layout="@layout/fragment_dashboard" />
 

@@ -24,7 +24,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class MessageFragment extends Fragment {
+public class HistoriFragment extends Fragment {
     private RecyclerView rvView;
     private RecyclerView.Adapter adapter;
     private ArrayList<PembayaranBus> pembayaranBus;
